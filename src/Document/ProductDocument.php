@@ -335,7 +335,7 @@ class ProductDocument
     /**
      * @return Collection|TaxonDocument[]
      */
-    public function getTaxons(): ArrayCollection
+    public function getTaxons(): Collection
     {
         return $this->taxons;
     }
@@ -351,7 +351,7 @@ class ProductDocument
     /**
      * @return Collection
      */
-    public function getAttributes(): ArrayCollection
+    public function getAttributes(): Collection
     {
         return $this->attributes;
     }
