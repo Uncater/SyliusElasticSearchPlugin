@@ -6,6 +6,7 @@ namespace Sylius\ElasticSearchPlugin\Document;
 
 use ONGR\ElasticsearchBundle\Annotation as ElasticSearch;
 use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 
 /**
  * @ElasticSearch\Nested()
@@ -34,7 +35,7 @@ class TaxonDocument
     protected $position = 0;
 
     /**
-     * @var ImageDocument[]|ArrayCollection
+     * @var ImageDocument[]|Collection
      *
      * @ElasticSearch\Embedded(class="Sylius\ElasticSearchPlugin\Document\ImageDocument", multiple=true)
      */
@@ -101,17 +102,17 @@ class TaxonDocument
     }
 
     /**
-     * @return ArrayCollection
+     * @return Collection
      */
-    public function getImages(): ArrayCollection
+    public function getImages(): Collection
     {
         return $this->images;
     }
 
     /**
-     * @param ArrayCollection $images
+     * @param Collection $images
      */
-    public function setImages(ArrayCollection $images): void
+    public function setImages(Collection $images): void
     {
         $this->images = $images;
     }

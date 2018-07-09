@@ -6,6 +6,7 @@ namespace Sylius\ElasticSearchPlugin\Document;
 
 use ONGR\ElasticsearchBundle\Annotation as ElasticSearch;
 use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 
 /**
  * @ElasticSearch\Document(type="product")
@@ -101,21 +102,21 @@ class ProductDocument
     protected $mainTaxon;
 
     /**
-     * @var ArrayCollection|TaxonDocument[]
+     * @var Collection|TaxonDocument[]
      *
      * @ElasticSearch\Embedded(class="Sylius\ElasticSearchPlugin\Document\TaxonDocument", multiple=true)
      */
     protected $taxons;
 
     /**
-     * @var ArrayCollection
+     * @var Collection
      *
      * @ElasticSearch\Embedded(class="Sylius\ElasticSearchPlugin\Document\AttributeDocument", multiple=true)
      */
     protected $attributes;
 
     /**
-     * @var ArrayCollection
+     * @var Collection
      *
      * @ElasticSearch\Embedded(class="Sylius\ElasticSearchPlugin\Document\ImageDocument", multiple=true)
      */
@@ -134,7 +135,7 @@ class ProductDocument
     protected $createdAt;
 
     /**
-     * @var ArrayCollection
+     * @var Collection
      *
      * @ElasticSearch\Embedded(class="Sylius\ElasticSearchPlugin\Document\VariantDocument", multiple=true)
      */
@@ -332,7 +333,7 @@ class ProductDocument
     }
 
     /**
-     * @return ArrayCollection|TaxonDocument[]
+     * @return Collection|TaxonDocument[]
      */
     public function getTaxons(): ArrayCollection
     {
@@ -340,7 +341,7 @@ class ProductDocument
     }
 
     /**
-     * @param ArrayCollection|TaxonDocument[] $taxons
+     * @param Collection|TaxonDocument[] $taxons
      */
     public function setTaxons($taxons): void
     {
@@ -348,7 +349,7 @@ class ProductDocument
     }
 
     /**
-     * @return ArrayCollection
+     * @return Collection
      */
     public function getAttributes(): ArrayCollection
     {
@@ -356,25 +357,25 @@ class ProductDocument
     }
 
     /**
-     * @param ArrayCollection $attributes
+     * @param Collection $attributes
      */
-    public function setAttributes(ArrayCollection $attributes): void
+    public function setAttributes(Collection $attributes): void
     {
         $this->attributes = $attributes;
     }
 
     /**
-     * @return ArrayCollection
+     * @return Collection
      */
-    public function getImages(): ArrayCollection
+    public function getImages(): Collection
     {
         return $this->images;
     }
 
     /**
-     * @param ArrayCollection $images
+     * @param Collection $images
      */
-    public function setImages(ArrayCollection $images): void
+    public function setImages(Collection $images): void
     {
         $this->images = $images;
     }
@@ -428,17 +429,17 @@ class ProductDocument
     }
 
     /**
-     * @return ArrayCollection
+     * @return Collection
      */
-    public function getVariants(): ArrayCollection
+    public function getVariants(): Collection
     {
         return $this->variants;
     }
 
     /**
-     * @param ArrayCollection $variants
+     * @param Collection $variants
      */
-    public function setVariants(ArrayCollection $variants): void
+    public function setVariants(Collection $variants): void
     {
         $this->variants = $variants;
     }

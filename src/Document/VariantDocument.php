@@ -6,6 +6,7 @@ namespace Sylius\ElasticSearchPlugin\Document;
 
 use ONGR\ElasticsearchBundle\Annotation as ElasticSearch;
 use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 
 /**
  * @ElasticSearch\Nested
@@ -20,7 +21,7 @@ class VariantDocument
     protected $id;
 
     /**
-     * @var ArrayCollection
+     * @var Collection
      *
      * @ElasticSearch\Embedded(class="Sylius\ElasticSearchPlugin\Document\ImageDocument", multiple=true)
      */
@@ -62,7 +63,7 @@ class VariantDocument
     protected $isTracked;
 
     /**
-     * @var ArrayCollection
+     * @var Collection
      *
      * @ElasticSearch\Embedded(class="Sylius\ElasticSearchPlugin\Document\OptionDocument", multiple=true)
      */
@@ -91,17 +92,17 @@ class VariantDocument
     }
 
     /**
-     * @return ArrayCollection
+     * @return Collection
      */
-    public function getImages(): ArrayCollection
+    public function getImages(): Collection
     {
         return $this->images;
     }
 
     /**
-     * @param ArrayCollection $images
+     * @param Collection $images
      */
-    public function setImages(ArrayCollection $images): void
+    public function setImages(Collection $images): void
     {
         $this->images = $images;
     }
@@ -192,17 +193,17 @@ class VariantDocument
     }
 
     /**
-     * @return ArrayCollection
+     * @return Collection
      */
-    public function getOptions(): ArrayCollection
+    public function getOptions(): Collection
     {
         return $this->options;
     }
 
     /**
-     * @param ArrayCollection $options
+     * @param Collection $options
      */
-    public function setOptions(ArrayCollection $options): void
+    public function setOptions(Collection $options): void
     {
         $this->options = $options;
     }
