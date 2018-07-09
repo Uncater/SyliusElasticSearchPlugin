@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Tests\Sylius\ElasticSearchPlugin\Factory;
 
-use ONGR\ElasticsearchBundle\Collection\Collection;
+use Doctrine\Common\Collections\ArrayCollection as Collection;
 use Sylius\Bundle\ChannelBundle\Doctrine\ORM\ChannelRepository;
 use Sylius\Bundle\CoreBundle\Doctrine\ORM\ProductRepository;
 use Sylius\Component\Core\Model\Channel;
